@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="186eac7b-7dd1-4a71-bca8-60d7776ee260" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Tracker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Django__Check.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Django__Migrate.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Django__Run_Server.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Django__Service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Django__Test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Flake_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__PyTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__bandit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__black__check_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__black__format_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__pycodestyle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/development.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/production.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/dashboard/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/home/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tox.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracker/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracker/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracker/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracker/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracker/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/management/commands/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/home/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,16 +22,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Table2XSV" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.Django: Run Server">
     <list>
-      <item itemvalue="Python.Django: Run Server" />
-      <item itemvalue="Python.Django: Migrate" />
-      <item itemvalue="Python.Django: Test" />
       <item itemvalue="Python.Django: Check" />
+      <item itemvalue="Python.Django: Migrate" />
+      <item itemvalue="Python.Django: Run Server" />
       <item itemvalue="Python.Django: Service" />
+      <item itemvalue="Python.Django: Test" />
       <item itemvalue="tox.TOX: Bandit" />
       <item itemvalue="tox.TOX: Black (Check)" />
       <item itemvalue="tox.TOX: Black (Format)" />
