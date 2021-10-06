@@ -150,7 +150,7 @@
                 try {
                     let response = await fetch(request);
                     let data = await response.json();
-                    if (response.status !== 201) {
+                    if (response.status !== 200) {
                         alert(JSON.stringify(data));
                         return;
                     }
