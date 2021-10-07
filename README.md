@@ -1,13 +1,11 @@
 # Django Todo REST Application
 
----
 **Python 3.{8,9}.X and Django 3.2.X**
 
 It is a very simple Todo Application built using Django and Vue. The root of the project is tracker.
 
 ## Setup Guide [Development]
 
----
 **Begin**
 - Install Git and Python 3.{8,9}
 - Clone the project: ```git clone https://github.com/amoghmadan/Django-Todo-REST-Application.git```
@@ -25,12 +23,10 @@ It is a very simple Todo Application built using Django and Vue. The root of the
 
 ## Run Tests (How to?)
 
----
 - Run tests: ```python manage.py test```
 
 ## Generate Deployment Files
 
----
 - Generate service file: ```python manage.py deploy -ev TRACKER_ENV -e production```
 
 *On Windows*: tracker.cmd [Will be generated]
@@ -39,7 +35,6 @@ It is a very simple Todo Application built using Django and Vue. The root of the
 
 ## Deploy On Windows (with nssm)
 
----
 **Get and Setup NSSM**
 - Download: https://nssm.cc/download
 - Extract nssm and add to path (make sure you do not have multiple versions)
