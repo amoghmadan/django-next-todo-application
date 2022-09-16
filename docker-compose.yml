@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    command: "poetry run gunicorn purchase_order.wsgi:application --chdir=/purchase-order/src -b=0.0.0.0:8000 -w=4 -t=10"
+    container_name: "Django-Todo-REST-Application"
+    environment:
+      PURCHASE_ORDER_ENVIRONMENT: ${TRACKER_ENV:-development}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    image: django-todo-rest-application:stack
+    ports:
+      - "38383:8000"
+    restart: always
+    volumes:
+      - .:/django-todo-rest-application

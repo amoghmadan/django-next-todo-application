@@ -1,23 +1,23 @@
 # Django Todo REST Application
 
-**Python 3.{8,9}.X and Django 3.2.X**
+**Python 3.{9,10}.X and Django 3.2.X**
 
 It is a very simple Todo Application built using Django and Vue. The root of the project is tracker.
 
 ## Setup Guide [Development]
 
 **Begin**
-- Install Git and Python 3.{8,9}
+- Install Git and Python 3.{9,10}
 - Clone the project: ```git clone https://github.com/amoghmadan/Django-Todo-REST-Application.git```
 - Move into the directory: ```cd Django-Todo-REST-Application```
-- Create a virtual environment: ```python -m venv venv```
+- Create a virtual environment: ```poetry install```
 
 **Activate Virtual Environment**
-- *On Linux*: ```. venv/bin/activate```
-- *On Windows*: ```venv\Scripts\activate```
+- ```bash
+  poetry shell
+  ```
 
 **Final Steps**
-- Install dependencies: ```pip install -r requirements/generic.txt -r requirements/development.txt```
 - Change directory to source: ```cd src```
 - Run development server: ```python manage.py runserver```
 
