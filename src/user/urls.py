@@ -1,16 +1,6 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
 from django.urls import path
 
-#########################
-# Project Level Imports #
-#########################
-from .views import RegisterView, LoginView, DetailView, LogoutView
+from user.views import RegisterView, LoginView, DetailView, LogoutView
 
 urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),

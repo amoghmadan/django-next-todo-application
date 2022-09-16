@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="186eac7b-7dd1-4a71-bca8-60d7776ee260" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Tracker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Django__Run_Server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Django__Run_Server.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/src/tox.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracker/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,19 +39,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1ytuqMsevkXWZmp7EFOEbdzri4O" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunManager" selected="Python.Django: Service">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Local/Python/Django-Todo-REST-Application&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.Django: Run Server">
     <list>
       <item itemvalue="Python.Django: Check" />
       <item itemvalue="Python.Django: Migrate" />
@@ -70,6 +91,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

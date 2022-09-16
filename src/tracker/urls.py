@@ -17,17 +17,22 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
 
-apis = [
+v1 = [
     path("user/", include("user.urls"), name="user"),
     path("task/", include("task.urls"), name="task"),
 ]
 
-home_view = TemplateView.as_view(template_name="home/index.html")
-dashboard_view = TemplateView.as_view(template_name="dashboard/index.html")
+apis = [
+    path("v1/", include(v1), name="v1"),
+]
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(apis), name="apis"),
-    path("", home_view, name="home"),
-    path("dashboard/", dashboard_view, name="dashboard"),
+    path("api/", include(apis), name="api"),
+    path("", TemplateView.as_view(template_name="home/index.html"), name="home"),
+    path(
+        "dashboard/",
+        TemplateView.as_view(template_name="dashboard/index.html"),
+        name="dashboard",
+    ),
 ]

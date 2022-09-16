@@ -1,28 +1,21 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
 from rest_framework import viewsets
 
-#########################
-# Project Level Imports #
-#########################
-from .models import Item
-from .serializers import ItemSerializer
+from task.models import Item
+from task.serializers import ItemSerializer
+from task.filters import ItemFilterSet
 
 
 class ItemViewSet(viewsets.ModelViewSet):
     """Item View Set: CRUD Operations Specific to User"""
 
-    queryset = Item.objects.order_by("-created")
+    queryset = Item.objects.all()
     serializer_class = ItemSerializer
-    filterset_fields = {"status": ["exact"]}
+    filterset_class = ItemFilterSet
 
     def get_queryset(self):
         """Get user specific Items"""
+        return super().get_queryset().filter(user=self.request.user)
 
-        queryset = super(ItemViewSet, self).get_queryset()
-        return queryset.filter(user=self.request.user)
+    def perform_create(self, serializer):
+        """Save Item with user as FK"""
+        serializer.save(user=self.request.user)

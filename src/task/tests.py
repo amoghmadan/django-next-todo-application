@@ -1,10 +1,3 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import resolve, reverse
@@ -12,9 +5,6 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
 
-#########################
-# Project Level Imports #
-#########################
 from task.models import Item
 
 User = get_user_model()

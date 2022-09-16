@@ -1,21 +1,8 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
 from django.contrib.auth import authenticate, get_user_model
 from django.db import IntegrityError
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
-
-#########################
-# Project Level Imports #
-#########################
-
-User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -37,7 +24,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         """Fields for end-point"""
 
-        model = User
+        model = get_user_model()
         fields = (
             "first_name",
             "last_name",
@@ -46,11 +33,10 @@ class UserSerializer(serializers.ModelSerializer):
             "confirm_password",
             "date_joined",
         )
-        extra_kwargs = {"date_joined": {"read_only": True}}
+        read_only_fields = ["read_only"]
 
     def validate(self, attrs):
         """Validate passwords"""
-
         if attrs["password"] != attrs.pop("confirm_password"):
             msg = _("Both the passwords should match.")
             raise serializers.ValidationError(msg)
@@ -58,17 +44,15 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """Create user or if exists throw 400"""
-
         email = validated_data.pop("email")
         password = validated_data.pop("password")
         try:
-            new_user = self.Meta.model.objects.create_user(
+            return self.Meta.model.objects.create_user(
                 email, email, password, **validated_data
             )
         except IntegrityError:
             msg = _("User with this email already exists.")
             raise serializers.ValidationError(msg)
-        return new_user
 
 
 class TokenSerializer(serializers.ModelSerializer):
@@ -91,7 +75,6 @@ class TokenSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         """Authenticate user and update it to attrs"""
-
         email = attrs.pop("email")
         password = attrs.pop("password")
         user = authenticate(
@@ -104,3 +87,9 @@ class TokenSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(msg, code="authorization")
         attrs["user"] = user
         return attrs
+
+    def create(self, validated_data):
+        try:
+            return super().create(validated_data)
+        except IntegrityError:
+            return self.Meta.model.objects.get(**validated_data)

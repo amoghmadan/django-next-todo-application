@@ -1,15 +1,4 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
 from django.apps import AppConfig
-
-#########################
-# Project Level Imports #
-#########################
 
 
 class TaskConfig(AppConfig):

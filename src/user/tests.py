@@ -1,20 +1,9 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import resolve, reverse
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
-
-#########################
-# Project Level Imports #
-#########################
 
 User = get_user_model()
 
@@ -27,7 +16,6 @@ class TestTemplate(TestCase):
 
     def test_home(self):
         """Check URL mapping"""
-
         self.assertEqual(resolve(reverse("home")).view_name, "home")
 
 
@@ -36,7 +24,6 @@ class TestAllowAnyAPIs(APITestCase):
 
     def test_register(self):
         """Test user registration API"""
-
         payload = {
             "confirm_password": USER_CRED["password"],
             **USER_NAME,
@@ -47,7 +34,6 @@ class TestAllowAnyAPIs(APITestCase):
 
     def test_login(self):
         """Test user login API"""
-
         self.test_register()  # Run to create a user for testing login
         payload = USER_CRED.copy()
         response = self.client.post(reverse("login"), payload)
@@ -59,7 +45,6 @@ class TestIsAuthenticatedAPIs(APITestCase):
 
     def setUp(self):
         """Set-up common things"""
-
         email = USER_CRED.get("email")
         password = USER_CRED.get("password")
         self.user = User.objects.create_user(email, email, password, **USER_NAME)
@@ -68,17 +53,14 @@ class TestIsAuthenticatedAPIs(APITestCase):
 
     def tearDown(self):
         """Remove user"""
-
         self.user.delete()
 
     def test_detail(self):
         """Test the detail API"""
-
         response = self.client.get(reverse("detail"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_logout(self):
         """Test logout API"""
-
         response = self.client.delete(reverse("logout"))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)

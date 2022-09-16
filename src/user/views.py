@@ -1,46 +1,21 @@
-####################
-# Standard Imports #
-####################
-
-########################
-# Non-Standard Imports #
-########################
-from django.contrib.auth import get_user_model
 from rest_framework import generics, permissions
 from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
 
-#########################
-# Project Level Imports #
-#########################
-from .serializers import TokenSerializer, UserSerializer
-
-User = get_user_model()
+from user.serializers import TokenSerializer, UserSerializer
 
 
 class RegisterView(generics.CreateAPIView):
     """Register New User"""
 
-    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
 
-class LoginView(generics.GenericAPIView):
+class LoginView(generics.CreateAPIView):
     """Login Registered User"""
 
-    queryset = Token.objects.all()
     serializer_class = TokenSerializer
     permission_classes = [permissions.AllowAny]
-
-    def post(self, request, *args, **kwargs):
-        """Get or Create Token"""
-
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data["user"]
-        instance, created = self.queryset.get_or_create(user=user)
-        return Response(self.get_serializer(instance).data)
 
 
 class DetailView(generics.RetrieveAPIView):
@@ -50,7 +25,6 @@ class DetailView(generics.RetrieveAPIView):
 
     def get_object(self):
         """Get the Logged-in user"""
-
         return self.request.user
 
 
@@ -60,6 +34,4 @@ class LogoutView(generics.DestroyAPIView):
     queryset = Token.objects.all()
 
     def get_object(self):
-        """Get the token for Logged-in user"""
-
-        return self.queryset.filter(user=self.request.user)
+        return self.queryset.get(user=self.request.user)
