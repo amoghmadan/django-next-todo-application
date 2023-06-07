@@ -2,16 +2,42 @@ version: "3"
 
 services:
   api:
-    build: .
-    command: "poetry run gunicorn purchase_order.wsgi:application --chdir=/purchase-order/src -b=0.0.0.0:8000 -w=4 -t=10"
-    container_name: "Django-Todo-REST-Application"
+    build: ./tracker_api
+    command: gunicorn tracker.wsgi:application --chdir=/tracker/src -b=0.0.0.0:8000 -w=4 -t=10
+    container_name: "Tracker-Backend"
     environment:
-      PURCHASE_ORDER_ENVIRONMENT: ${TRACKER_ENV:-development}
+      TRACKER_ENV: ${TRACKER_ENV:-development}
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    image: django-todo-rest-application:stack
-    ports:
-      - "38383:8000"
+    image: tracker:backend
     restart: always
     volumes:
-      - .:/django-todo-rest-application
+      - ./tracker_api:/tracker
+
+  webui:
+    build: ./teacker_webui
+    command: bash -c "npm run build && npm start"
+    container_name: "Tracker-Frontend"
+    environment:
+      NODE_ENV: ${NODE_ENV:-local}
+    image: tracker:frontend
+    restart: always
+    volumes:
+      - ./tracker_webui:/tracker
+      - /tracker/node_modules/
+    depends_on:
+      - api
+
+  nginx:
+    image: nginx:latest
+    container_name: "Tracker-Nginx"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./tracker_api/static:/static
+      - ./tracker_webui/.next:/.next
+      - ./certs:/etc/ssl/certs
+    depends_on:
+      - webui

@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PyCodeStyle" type="Tox" factoryName="Tox">
+    <module name="tracker_api" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SDK_HOME" value="C:\Users\amogh.madan.ACS\AppData\Local\pypoetry\Cache\virtualenvs\tracker--J6qO7lG-py3.10\Scripts\python.exe" />
+    <option name="SDK_NAME" value="Poetry (tracker_api)" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <arguments>
+      <array />
+    </arguments>
+    <runOnlyEnvs>
+      <array>
+        <option value="py310-pycodestyle" />
+      </array>
+    </runOnlyEnvs>
+    <method v="2" />
+  </configuration>
+</component>
