@@ -4,7 +4,6 @@ LABEL maintainer="Amogh Madan <amoghmadaan@gmail.com>"
 
 WORKDIR /tracker
 
-RUN apt-get update
 RUN python3 -m pip install poetry gunicorn
 
 COPY ./pyproject.toml ./poetry.lock /tracker/
