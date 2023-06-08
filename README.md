@@ -2,7 +2,14 @@
 
 Tracker Full Stack Project.
 
-# How to start applicaiton?
+## Technologies
+
+- Python: Django (Back End)
+- Node: Next (Front End)
+- NGINX (Server)
+- Docker (Containerization)
+
+## How to start applicaiton?
 
 - Run this command to start the Django, Next and Nginx Servers
   ```bash
@@ -10,7 +17,7 @@ Tracker Full Stack Project.
   ```
 - Play with the application at http://127.0.0.1
 
-## Reference
+## Development Guides
 
 - **[Back End Reference]**
 - **[Front End Reference]**
