@@ -15,7 +15,7 @@ services:
       - ./tracker_api:/tracker
 
   webui:
-    build: ./teacker_webui
+    build: ./tracker_webui
     command: bash -c "npm run build && npm start"
     container_name: "Tracker-Frontend"
     environment:
