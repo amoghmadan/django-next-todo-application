@@ -1,4 +1,4 @@
-FROM node:18-bullseye-slim
+FROM node:20-bookworm-slim
 
 LABEL maintainer="Amogh Madan <amoghmadaan@gmail.com>"
 

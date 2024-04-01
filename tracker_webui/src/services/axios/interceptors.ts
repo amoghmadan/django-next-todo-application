@@ -5,7 +5,7 @@ import {
   InternalAxiosRequestConfig,
 } from "axios";
 
-import { Browser, LOCAL_STORAGE_KEY } from "../../constants";
+import { Page, LOCAL_STORAGE_KEY } from "@/config";
 
 const onRequest = (
   config: InternalAxiosRequestConfig
@@ -14,23 +14,15 @@ const onRequest = (
   if (token) {
     config.headers["Authorization"] = `Token ${token}`;
   }
-  if (JSON.parse(process.env.NEXT_PUBLIC_DEBUG || "false")) {
-    console.info(`[request] [${JSON.stringify(config)}]`);
-  }
   return config;
 };
 
 const onRequestError = (error: AxiosError): Promise<AxiosError> => {
-  if (JSON.parse(process.env.NEXT_PUBLIC_DEBUG || "false")) {
-    console.error(`[request error] [${JSON.stringify(error)}]`);
-  }
+  console.error(`[request error] [${JSON.stringify(error)}]`);
   return Promise.reject(error);
 };
 
 const onResponse = (response: AxiosResponse): AxiosResponse => {
-  if (JSON.parse(process.env.NEXT_PUBLIC_DEBUG || "false")) {
-    console.info(`[response] [${JSON.stringify(response)}]`);
-  }
   return response;
 };
 
@@ -48,7 +40,7 @@ const onResponseError = (error: AxiosError): Promise<AxiosError> => {
       case 403:
         break;
       case 404:
-        window.location.href = Browser.HTTP_404;
+        window.location.href = Page.HTTP_404;
         break;
       case 500:
         break;
@@ -58,13 +50,9 @@ const onResponseError = (error: AxiosError): Promise<AxiosError> => {
         return Promise.reject(error);
     }
   } catch (e: unknown) {
-    if (JSON.parse(process.env.NEXT_PUBLIC_DEBUG || "false")) {
-      console.error(`[response error] [${JSON.stringify(e)}]`);
-    }
+    console.error(`[response error] [${JSON.stringify(e)}]`);
   }
-  if (JSON.parse(process.env.NEXT_PUBLIC_DEBUG || "false")) {
-    console.error(`[response error] [${JSON.stringify(error)}]`);
-  }
+  console.error(`[response error] [${JSON.stringify(error)}]`);
   return Promise.reject(error.message);
 };
 

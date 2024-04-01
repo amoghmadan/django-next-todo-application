@@ -1,4 +1,4 @@
-import useListItem from "./useListItem";
+import { usePaginatedItems } from "./usePaginated";
 import useUser from "./useUser";
 
-export { useListItem, useUser };
+export { usePaginatedItems, useUser };
