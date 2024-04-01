@@ -1,15 +1,18 @@
 import Image from "next/image";
 import { NextRouter, useRouter } from "next/router";
 import { Fragment, MouseEvent } from "react";
+import { useDispatch } from "react-redux";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   ChevronDownIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import { Dispatch } from "@reduxjs/toolkit";
 
 import { API, Page, Public, LOCAL_STORAGE_KEY } from "@/config";
 import { useUser } from "@/hooks";
+import { removeUser } from "@/redux/user";
 import { api } from "@/services/axios";
 
 function classNames(...classes: string[]): string {
@@ -17,6 +20,7 @@ function classNames(...classes: string[]): string {
 }
 
 export default function Navbar(): JSX.Element {
+  const dispatch: Dispatch = useDispatch();
   const router: NextRouter = useRouter();
   const { user, loading } = useUser();
 
@@ -26,6 +30,7 @@ export default function Navbar(): JSX.Element {
     e.preventDefault();
     await api.delete(API.ACCOUNT_LOGOUT);
     localStorage.removeItem(LOCAL_STORAGE_KEY);
+    dispatch(removeUser(null));
     router.push(Page.ROOT);
   };
 
@@ -108,7 +113,7 @@ export default function Navbar(): JSX.Element {
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
                           >
-                            {loading ? (
+                            {loading || !user ? (
                               <>Loading...</>
                             ) : (
                               <>
