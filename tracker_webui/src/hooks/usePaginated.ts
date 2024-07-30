@@ -60,7 +60,7 @@ function paginationHook<Entity, Filter>(
       apiCall();
 
       return (): void => {
-        source.cancel("Request cancelled by the user.");
+        source.cancel("Operation cancelled by the user.");
       };
     }, [filters]);
 
